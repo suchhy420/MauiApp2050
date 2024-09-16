@@ -4,21 +4,27 @@
              x:Class="MauiApp2050.MainPage">
 
     <StackLayout Padding="20" VerticalOptions="Center">
-        <Image Source="dice_image.png" 
+        
+        <Image x:Name="DiceImage" 
                Aspect="AspectFit"
                HeightRequest="200" 
-               HorizontalOptions="Center" />
+               HorizontalOptions="Center" 
+               VerticalOptions="Center" />
 
+        
         <RadioButton Content="K4" x:Name="RbK4" />
         <RadioButton Content="K6" x:Name="RbK6" IsChecked="True" />
         <RadioButton Content="K10" x:Name="RbK10" />
         <RadioButton Content="K12" x:Name="RbK12" />
 
-        <Button Text="Roll Dice" Clicked="OnRollDiceClicked"/>
+        <Button Text="Roll Dice" Clicked="OnRollDiceClicked" />
 
-        <Label x:Name="ResultLabel" Text="Result will appear here" 
+        
+        <Label x:Name="ResultLabel" 
+               Text="Result will appear here" 
                HorizontalOptions="Center" 
-               FontSize="24"/>
+               FontSize="36" 
+               VerticalOptions="CenterAndExpand"/>
     </StackLayout>
 
 </ContentPage>

@@ -12,24 +12,36 @@ namespace MauiApp2050
 
         private void OnRollDiceClicked(object sender, EventArgs e)
         {
-            int result = RollDice();
-            ResultLabel.Text = $"You rolled a {result}";
+            int result = RollDice();  
+            ResultLabel.Text = $"You rolled a {result}";  
+            UpdateDiceImage(result); 
         }
 
+        
         private int RollDice()
         {
             Random random = new Random();
             int sides = GetNumberOfSides();
-            return random.Next(1, sides + 1);
+            return random.Next(1, sides + 1);  
         }
 
+        
         private int GetNumberOfSides()
         {
             if (RbK4.IsChecked) return 4;
             if (RbK6.IsChecked) return 6;
             if (RbK10.IsChecked) return 10;
             if (RbK12.IsChecked) return 12;
-            return 6;
+            return 6;  // Domyślnie K6
+        }
+
+        
+        private void UpdateDiceImage(int result)
+        {
+            
+            string imageName = $"dice_{result}.png";
+
+            DiceImage.Source = ImageSource.FromFile(imageName);
         }
     }
 }
